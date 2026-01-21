@@ -10,8 +10,8 @@ interface CountdownModalProps {
 
 export default function CountdownModal({ isOpen, onClose, targetHours = 72 }: CountdownModalProps) {
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 })
-  // Fixed launch time: Tuesday, January 21, 2026 at 9:00 AM EST
-  const targetTime = new Date('2026-01-21T09:00:00-05:00').getTime()
+  // Fixed launch time: Friday, January 24, 2026 at 9:00 AM EST
+  const targetTime = new Date('2026-01-24T09:00:00-05:00').getTime()
 
   useEffect(() => {
     if (!isOpen || !targetTime) return
@@ -41,7 +41,7 @@ export default function CountdownModal({ isOpen, onClose, targetHours = 72 }: Co
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-black/80 backdrop-blur-sm"
         onClick={onClose}
       />
@@ -74,9 +74,9 @@ export default function CountdownModal({ isOpen, onClose, targetHours = 72 }: Co
           <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">
             Ordering Available Soon
           </h2>
-          
+
           <p className="text-gray-400 mb-8">
-            Tuesday, January 21st at 9:00 AM EST
+            Friday, January 24th at 9:00 AM EST
           </p>
 
           {/* Countdown */}
